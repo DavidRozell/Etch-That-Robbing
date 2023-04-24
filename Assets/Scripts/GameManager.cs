@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private Vector2 startPosition;
     private bool canShake;
+    public Vector2 startPosition;
     public GameObject prefab;
     public float tiltThreshold;
     public float moveSpeed;
@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
     {
         while (!canShake)
         {
-            startPosition = new Vector2(8.19f, -0.59f);
             GameObject newObject = Instantiate(prefab, startPosition, Quaternion.identity);
             Rigidbody2D rb = newObject.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(-moveSpeed, 0f);
