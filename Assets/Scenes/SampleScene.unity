@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2cb5a252a64417bb253c2392c5b934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 8.19, y: -0.94}
+  startPosition: {x: 7, y: -0.94}
   prefab: {fileID: 7073519567493862274, guid: 647d6607bea854e27aa338f6fbd2a28b, type: 3}
   tiltThreshold: 0.5
   moveSpeed: 6

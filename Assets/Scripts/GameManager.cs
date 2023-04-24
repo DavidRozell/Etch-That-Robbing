@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnObjects()
     {
-        while (!canShake)
+        while (true)//!canShake)
         {
             GameObject newObject = Instantiate(prefab, startPosition, Quaternion.identity);
             Rigidbody2D rb = newObject.GetComponent<Rigidbody2D>();
