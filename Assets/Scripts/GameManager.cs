@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
-        playerRb2D = player.GetComponent<Rigidbody2D>();
         StartCoroutine(SpawnObjects());
     }
 
