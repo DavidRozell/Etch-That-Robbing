@@ -20,5 +20,18 @@ public class TiltJump : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y < 1f && transform.position.y < 0)
+            {
+                rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            }
+        }
+    }
+
+    public void Die()
+    {
+        rb.AddForce(new Vector2(0f, 20), ForceMode2D.Impulse);
+        rb.AddTorque(220);
     }
 }

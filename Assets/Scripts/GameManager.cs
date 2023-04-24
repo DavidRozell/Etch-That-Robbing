@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +11,24 @@ public class GameManager : MonoBehaviour
     public float moveSpeed;
     public float spawnDelay;
     public float destroyDelay;
+    public int score;
+    public int health;
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI scoreText;
+    public GameObject player;
 
     private void Start()
     {
+        player = GameObject.Find("Player");
         StartCoroutine(SpawnObjects());
+    }
+
+    private void Update()
+    {
+        healthText.text = health.ToString();
+
+        if (player.transform.position.y < -15f)
+            SceneManager.LoadScene(0);
     }
 
     private IEnumerator SpawnObjects()
@@ -26,5 +42,13 @@ public class GameManager : MonoBehaviour
             Destroy(newObject, destroyDelay);
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+
+    public IEnumerator ShowScore()
+    {
+        scoreText.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        scoreText.enabled = false;
+        
     }
 }
