@@ -31,6 +31,8 @@ public class TiltJump : MonoBehaviour
 
     public void Die()
     {
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         rb.AddForce(new Vector2(0f, 20), ForceMode2D.Impulse);
         rb.AddTorque(220);
     }

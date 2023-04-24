@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private Vector2 startPosition;
+    private bool canShake;
     public GameObject prefab;
+    public float tiltThreshold;
     public float moveSpeed;
     public float spawnDelay;
     public float destroyDelay;
@@ -15,11 +17,13 @@ public class GameManager : MonoBehaviour
     public int health;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI restartText;
     public GameObject player;
 
     private void Start()
     {
         player = GameObject.Find("Player");
+        playerRb2D = player.GetComponent<Rigidbody2D>();
         StartCoroutine(SpawnObjects());
     }
 
@@ -27,13 +31,26 @@ public class GameManager : MonoBehaviour
     {
         healthText.text = health.ToString();
 
-        if (player.transform.position.y < -15f)
+        Vector3 acceleration = Input.acceleration;
+        if (canShake && acceleration.y > tiltThreshold)
+        {
             SceneManager.LoadScene(0);
+        }
+        else if (canShake && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if (player.transform.position.y < -15f)
+        {
+            canShake = true;
+            restartText.gameObject.SetActive(true);
+        }
     }
 
     private IEnumerator SpawnObjects()
     {
-        while (true)
+        while (!canShake)
         {
             startPosition = new Vector2(8.19f, -0.59f);
             GameObject newObject = Instantiate(prefab, startPosition, Quaternion.identity);
@@ -49,6 +66,5 @@ public class GameManager : MonoBehaviour
         scoreText.enabled = true;
         yield return new WaitForSeconds(0.5f);
         scoreText.enabled = false;
-        
     }
 }
