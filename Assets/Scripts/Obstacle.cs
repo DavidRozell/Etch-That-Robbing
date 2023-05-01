@@ -5,11 +5,14 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private GameManager gameManager;
+    public AudioSource audioSource;
+    public AudioClip collideSound;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("Main Camera").GetComponent<GameManager>();
+        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class Obstacle : MonoBehaviour
                 tiltJump.enabled = false;
                 tiltJump.Die();
             }
+            audioSource.PlayOneShot(collideSound);
             Destroy(gameObject);
         }
     }

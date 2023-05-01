@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool canShake;
+    private bool isShaking;
     public Vector2 startPosition;
     public GameObject prefab;
     public float tiltThreshold;
@@ -19,6 +21,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI restartText;
     public GameObject player;
+    public AudioSource audioSource;
+    public AudioClip scoreSound;
+    public AudioClip shakeSound;
 
     private void Start()
     {
@@ -31,13 +36,15 @@ public class GameManager : MonoBehaviour
         healthText.text = health.ToString();
 
         Vector3 acceleration = Input.acceleration;
-        if (canShake && acceleration.y > tiltThreshold)
+        if (canShake && acceleration.y > tiltThreshold && !isShaking)
         {
-            SceneManager.LoadScene(0);
+            isShaking = true;
+            StartCoroutine(Restart());
         }
-        else if (canShake && Input.GetKeyDown(KeyCode.Space))
+        else if (canShake && Input.GetKeyDown(KeyCode.Space) && !isShaking)
         {
-            SceneManager.LoadScene(0);
+            isShaking = true;
+            StartCoroutine(Restart());
         }
 
         if (player.transform.position.y < -15f)
@@ -49,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnObjects()
     {
-        while (true)//!canShake)
+        while (!canShake)
         {
             GameObject newObject = Instantiate(prefab, startPosition, Quaternion.identity);
             Rigidbody2D rb = newObject.GetComponent<Rigidbody2D>();
@@ -61,8 +68,16 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ShowScore()
     {
+        audioSource.PlayOneShot(scoreSound);
         scoreText.enabled = true;
         yield return new WaitForSeconds(0.5f);
         scoreText.enabled = false;
+    }
+
+    private IEnumerator Restart()
+    {
+        audioSource.PlayOneShot(shakeSound);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(0);
     }
 }
