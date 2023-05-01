@@ -498,7 +498,7 @@ MonoBehaviour:
   restartText: {fileID: 1448449282}
   player: {fileID: 146635432}
   audioSource: {fileID: 519420034}
-  scoreSound: {fileID: 8300000, guid: 7a58bccf260f86e459eb15c966992a26, type: 3}
+  scoreSound: {fileID: 8300000, guid: d07f2e624a71479419651145493d1d93, type: 3}
   shakeSound: {fileID: 8300000, guid: 36a10d9bfbd4ae84aaff1b0af7503be7, type: 3}
 --- !u!82 &519420034
 AudioSource:
@@ -1337,3 +1337,60 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
+--- !u!1001 &6544818670817219761
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1399610577669934671, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_Name
+      value: welcome to etch city population of idk
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0613
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5265
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996189902482047787, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1938b958a5f811a44aef9f36e1e7948a, type: 3}
