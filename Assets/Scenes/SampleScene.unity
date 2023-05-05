@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 7, y: -0.94}
-  prefab: {fileID: 7073519567493862274, guid: 647d6607bea854e27aa338f6fbd2a28b, type: 3}
+  prefab: {fileID: 3738943560200283201, guid: 0bc531fd3e5d6a140b184e1ca0874071, type: 3}
   tiltThreshold: 0.5
   moveSpeed: 6
   spawnDelay: 1.7
@@ -5545,7 +5545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &857743565
 Transform:
   m_ObjectHideFlags: 0
@@ -11259,7 +11259,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 1258291199
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.2901961}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11528,7 +11528,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 33031671643624035, guid: b5b825e6bf1b1ca4d9be449130460cee, type: 3}
       propertyPath: m_SortingOrder
-      value: -5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2328222358461141568, guid: b5b825e6bf1b1ca4d9be449130460cee, type: 3}
       propertyPath: m_RootOrder
@@ -11886,6 +11886,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2169231193796619948, guid: cc2ea4ef316b5d74292f9e2b6e69cb22, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5262375445403638666, guid: cc2ea4ef316b5d74292f9e2b6e69cb22, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -11940,11 +11944,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5262375445403638773, guid: cc2ea4ef316b5d74292f9e2b6e69cb22, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5262375445403638773, guid: cc2ea4ef316b5d74292f9e2b6e69cb22, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974171758812707339, guid: cc2ea4ef316b5d74292f9e2b6e69cb22, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc2ea4ef316b5d74292f9e2b6e69cb22, type: 3}
@@ -12323,10 +12331,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6722926881554544750, guid: c07f1e256e500ef43b130d9e431a157f, type: 3}
+      propertyPath: m_Constraints
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722926881554544750, guid: c07f1e256e500ef43b130d9e431a157f, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.6
+      objectReference: {fileID: 0}
     - target: {fileID: -4133626485169153644, guid: c07f1e256e500ef43b130d9e431a157f, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: -440072387134069161, guid: c07f1e256e500ef43b130d9e431a157f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8676150086115127524, guid: c07f1e256e500ef43b130d9e431a157f, type: 3}
       propertyPath: m_Name
       value: Robber
