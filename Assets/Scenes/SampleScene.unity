@@ -443,7 +443,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11666,7 +11666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800122578977044892, guid: 9b96e7741df10484486c652f07519879, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b96e7741df10484486c652f07519879, type: 3}
@@ -11823,7 +11823,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5262375445403638666, guid: cc2ea4ef316b5d74292f9e2b6e69cb22, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5262375445403638667, guid: cc2ea4ef316b5d74292f9e2b6e69cb22, type: 3}
       propertyPath: m_RootOrder
@@ -11944,7 +11944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392214286870301894, guid: 1ab0307ab88e88f428014cf8766c3e1b, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ab0307ab88e88f428014cf8766c3e1b, type: 3}
@@ -11970,7 +11970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4924035827664216174, guid: 08f2be915ed61bb4cbb51dac6c59abe4, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5179451743215302024, guid: 08f2be915ed61bb4cbb51dac6c59abe4, type: 3}
       propertyPath: m_RootOrder
@@ -12108,7 +12108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8424941772031021015, guid: 0bc531fd3e5d6a140b184e1ca0874071, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bc531fd3e5d6a140b184e1ca0874071, type: 3}
@@ -12259,7 +12259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8676150086115127527, guid: c07f1e256e500ef43b130d9e431a157f, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07f1e256e500ef43b130d9e431a157f, type: 3}
