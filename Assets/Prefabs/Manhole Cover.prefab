@@ -233,4 +233,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2321d86c29f0249a07e8b79a334f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 6, y: 2}
+  startPosition: {x: 6, y: 0}
