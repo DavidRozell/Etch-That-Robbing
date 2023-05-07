@@ -26,6 +26,7 @@ public class TiltJump : MonoBehaviour
         Vector3 acceleration = Input.acceleration;
         if (acceleration.y > tiltThreshold && rb.velocity.y < 1f && transform.position.y < 0)
         {
+            jumpLandParticles.Stop();
             audioSource.PlayOneShot(jumpSound);
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
