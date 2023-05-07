@@ -15,6 +15,7 @@ public class StartGame : MonoBehaviour
     public AudioSource audioSource;
     public GameManager gameManager;
     public StartGame startGame;
+    private bool gameStarted;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +29,17 @@ public class StartGame : MonoBehaviour
     void Update()
     {
         Vector3 acceleration = Input.acceleration;
-        if (acceleration.y > tiltThreshold)
+        if (acceleration.y > tiltThreshold && !gameStarted)
         {
+            gameStarted = true;
             Time.timeScale = 1f;
             StartCoroutine(StartRunning());
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
             {
+                gameStarted = true;
                 Time.timeScale = 1f;
                 StartCoroutine(StartRunning());
             }

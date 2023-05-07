@@ -13,7 +13,7 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("Main Camera").GetComponent<GameManager>();
-        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        audioSource = gameManager.GetComponent<AudioSource>();
         copAI = GameObject.Find("Police").GetComponent<AI>();
     }
 

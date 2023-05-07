@@ -16,6 +16,7 @@ public class TiltJump : MonoBehaviour
 
     private void Start()
     {
+        jumpLandParticles.Play();
         rb = GetComponent<Rigidbody2D>();
         hasLanded = true;
     }
