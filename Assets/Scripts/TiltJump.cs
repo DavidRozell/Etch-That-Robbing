@@ -12,6 +12,7 @@ public class TiltJump : MonoBehaviour
     public AudioClip gameOverSound;
     public AudioClip jumpSound;
     public AudioClip jumpLandSound;
+    public ParticleSystem jumpLandParticles;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class TiltJump : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y < 1f && transform.position.y < 0)
             {
+                jumpLandParticles.Stop();
                 audioSource.PlayOneShot(jumpSound);
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             }
@@ -38,6 +40,7 @@ public class TiltJump : MonoBehaviour
 
         if (rb.velocity.y < 1f && transform.position.y < 0 && !hasLanded)
         {
+            jumpLandParticles.Play();
             hasLanded = true;
             audioSource.PlayOneShot(jumpLandSound);
         }
@@ -52,11 +55,11 @@ public class TiltJump : MonoBehaviour
 
     public void Die()
     {
+        jumpLandParticles.Stop();
         audioSource.PlayOneShot(gameOverSound);
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         rb.AddForce(new Vector2(0f, 20), ForceMode2D.Impulse);
         rb.AddTorque(220);
-
     }
 }

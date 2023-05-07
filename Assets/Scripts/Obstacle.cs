@@ -7,12 +7,14 @@ public class Obstacle : MonoBehaviour
     private GameManager gameManager;
     public AudioSource audioSource;
     public AudioClip collideSound;
+    private AI copAI;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("Main Camera").GetComponent<GameManager>();
         audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        copAI = GameObject.Find("Police").GetComponent<AI>();
     }
 
     // Update is called once per frame
@@ -33,9 +35,18 @@ public class Obstacle : MonoBehaviour
                 boxCollider2D.enabled = false;
                 tiltJump.enabled = false;
                 tiltJump.Die();
+                copAI.enabled = false; 
             }
             audioSource.PlayOneShot(collideSound);
             Destroy(gameObject);
+        }
+        else
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                audioSource.PlayOneShot(collideSound);
+                Destroy(gameObject);
+            }
         }
     }
 }

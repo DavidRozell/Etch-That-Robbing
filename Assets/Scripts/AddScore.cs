@@ -5,11 +5,13 @@ using UnityEngine;
 public class AddScore : MonoBehaviour
 {
     private GameManager gameManager;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("Main Camera").GetComponent<GameManager>();
+        audioSource = gameManager.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,9 +24,10 @@ public class AddScore : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            gameManager.ShowScore();
             gameManager.score++;
             gameManager.scoreText.text = gameManager.score.ToString();
-            StartCoroutine(gameManager.ShowScore());
+            audioSource.PlayOneShot(gameManager.scoreSound);
         }
     }
 }

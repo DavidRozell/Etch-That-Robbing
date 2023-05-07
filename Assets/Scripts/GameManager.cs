@@ -17,10 +17,11 @@ public class GameManager : MonoBehaviour
     public float destroyDelay;
     public int score;
     public int health;
-    public TextMeshProUGUI healthText;
+    //public TextMeshProUGUI healthText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI restartText;
     public GameObject player;
+    public GameObject ai;
     public AudioSource audioSource;
     public AudioClip scoreSound;
     public AudioClip shakeSound;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        healthText.text = health.ToString();
+        //healthText.text = health.ToString();
 
         Vector3 acceleration = Input.acceleration;
         if (canShake && acceleration.y > tiltThreshold && !isShaking)
@@ -51,7 +52,13 @@ public class GameManager : MonoBehaviour
         {
             canShake = true;
             restartText.gameObject.SetActive(true);
+            ai.SetActive(false);
         }
+    }
+
+    public void ShowScore()
+    {
+        scoreText.enabled = true;
     }
 
     private IEnumerator SpawnObjects()
@@ -64,14 +71,6 @@ public class GameManager : MonoBehaviour
             Destroy(newObject, destroyDelay);
             yield return new WaitForSeconds(spawnDelay);
         }
-    }
-
-    public IEnumerator ShowScore()
-    {
-        audioSource.PlayOneShot(scoreSound);
-        scoreText.enabled = true;
-        yield return new WaitForSeconds(0.5f);
-        scoreText.enabled = false;
     }
 
     private IEnumerator Restart()
